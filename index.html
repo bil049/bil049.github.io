@@ -1,158 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilal Attahiru - CV</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Slide-up animation */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  <!-- Tailwind + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* Apply slide-up animation to elements */
-        .animate-slide-up {
-            animation: slideUp 0.6s ease-out forwards;
-        }
-
-        /* Apply hover effect */
-        .hover-animate-up:hover {
-            transform: translateY(-4px); /* Move up slightly on hover */
-        }
-
-        /* Styling for the background and text */
-        .bg-gradient-to-r {
-            background: linear-gradient(to right, #685a38, #998553, #d8bc75);
-        }
-
-        .transition {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+  <style>
+    html { scroll-behavior: smooth; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+    .section-container { max-width: 800px; margin: 0 auto; }
+    .glass {
+      background: rgba(20, 20, 20, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+  </style>
 </head>
-<body class="bg-white text-yellow-900 min-h-screen">
 
-    <!-- Header Section -->
-    <header class="shadow-lg fixed w-full z-50 min-h-[100px]" style="background-image: url('JPGS/gold-textured-background.jpg'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div> 
-        <div class="relative container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-yellow-50">BILAL ATTAHIRU</h1>
-            <div class="block lg:hidden">
-                <button id="nav-toggle" class="text-lg text-yellow-50 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav id="nav-content" class="hidden lg:flex lg:items-center lg:justify-between w-full lg:w-auto">
-                <a href="#about" class="block lg:inline-block text-lg mx-3 text-yellow-50 transition hover:text-yellow-300">About</a>
-                <a href="#projects" class="block lg:inline-block text-lg mx-3 text-yellow-50 transition hover:text-yellow-300">Projects</a>
-                <a href="#contact" class="block lg:inline-block text-lg mx-3 text-yellow-50 transition hover:text-yellow-300">Contact</a>
-                <a href="BILAL ATTAHIRU - RESUME.pdf" target="_blank" class="block lg:inline-block text-lg mx-3 text-yellow-50 transition hover:text-yellow-300">Resume</a>
-            </nav>
-        </div>
-    </header>
-    
-    
-    <script>
-        document.getElementById('nav-toggle').onclick = function () {
-            var navContent = document.getElementById('nav-content');
-            navContent.classList.toggle('hidden');
-        };
-    </script>
-    
+<body class="bg-black text-gray-200 font-sans">
 
-    <!-- About Section -->
-    <section id="about" class="container mx-auto px-6 py-32 animate-slide-up" style="animation-delay: 0.2s">
-        <h2 class="text-4xl font-bold mb-4">About Me</h2>
-        <p class="text-lg text-justify">Hi, I'm Bilal Attahiru. I am a passionate Software Engineer and Visual Designer. I hold a BSc Honours in Software Engineering.
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-black bg-opacity-90 z-50 shadow-md">
+    <div class="flex justify-between items-center max-w-6xl mx-auto px-6 py-4">
+      <h1 class="text-2xl font-bold text-yellow-400"><i class="fa-solid fa-code"></i> Bilal Attahiru</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#summary" class="hover:text-yellow-400">Summary</a>
+        <a href="#education" class="hover:text-yellow-400">Education</a>
+        <a href="#experience" class="hover:text-yellow-400">Experience</a>
+        <a href="#projects" class="hover:text-yellow-400">Projects</a>
+        <a href="#skills" class="hover:text-yellow-400">Skills</a>
+        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-            With a unique blend of technical expertise and creative flair, I thrive on solving complex problems and bringing innovative ideas to life. My journey in software engineering has equipped me with a strong foundation in programming, system design, and project management, while my background in visual design enhances my ability to create visually appealing and user-friendly interfaces.
-            
-            I am always eager to take on new challenges and contribute to projects that make a meaningful impact. Welcome to my portfolio, where you can explore my work and get to know more about my skills and experiences.</p>
-            <a href="ATTAHIRU BILAL - RESUME.pdf" target="_blank" class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-white font-bold py-2 px-4 rounded-lg border-2 border-gray-300 transition hover:brightness-110 mt-4 inline-block">
-                Download Resume
-            </a>
-            
+  <main class="pt-32 space-y-20">
+
+    <!-- Summary -->
+    <section id="summary" class="section-container animate-fadeUp">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-user-astronaut text-yellow-400"></i> Professional Summary</h2>
+        <p>
+          Motivated and results-oriented <strong>Software Engineering graduate (First Class Honours)</strong> with strong experience in IT support, project portfolio management, and hands-on software development. Skilled in Python, Django, and web development, with proven leadership guiding student and startup ventures from ideation to execution.
+        </p>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-white py-8">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-8">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-yellow-50 bg-opacity-70 text-yellow-900 shadow-md rounded-lg p-4 border border-yellow-300 transition duration-300 ease-in-out transform hover:shadow-2xl hover:ring-2 hover:ring-yellow-400 flex flex-col justify-between min-h-[400px] animate-slide-up hover-animate-up" style="animation-delay: 0.3s">
-                    <h3 class="text-2xl font-bold mb-2">SwiftRides</h3>
-                    <p class="text-lg text-justify">SwiftRides is a car rental Web Application i developed using Django as the backend framework and HTML, Tailwind CSS, and JavaScript as frontend technologies. It is cross-platform (not dependent on OS), can be accessed via a web browser. SwiftRides has two user sides - rental companies and customers (renters). SwiftRides allows for seamless profile management, car upload and management, car reservation and reservation management.</p>
-                    <a href="https://github.com/bil049/SwiftRides" target="_blank" class="text-yellow-600 hover:text-yellow-700">View on GitHub</a>
-                </div>
-                <div class="bg-yellow-50 bg-opacity-70 text-yellow-900 shadow-md rounded-lg p-4 border border-yellow-300 transition duration-300 ease-in-out transform hover:shadow-2xl hover:ring-2 hover:ring-yellow-400 flex flex-col justify-between min-h-[400px] animate-slide-up hover-animate-up" style="animation-delay: 0.4s">
-                    <h3 class="text-2xl font-bold mb-2">Hotel Management System</h3>
-                    <p class="text-lg text-justify">A hotel management system developed using Django, HTML, CSS, and JavaScript. It offers convenient services such as room booking, reservation management, extra services (pick-up and drop-off options to and from airports), and a chat box to enable communication between customers and the admin. </p>
-                    <a href="https://github.com/bil049/HMS" target="_blank" class="text-yellow-600 hover:text-yellow-700">View on GitHub</a>
-                </div>
-                <div class="bg-yellow-50 bg-opacity-70 text-yellow-900 shadow-md rounded-lg p-4 border border-yellow-300 transition duration-300 ease-in-out transform hover:shadow-2xl hover:ring-2 hover:ring-yellow-400 flex flex-col justify-between min-h-[400px] animate-slide-up hover-animate-up" style="animation-delay: 0.5s">
-                    <h3 class="text-2xl font-bold mb-2">Graphic Design Projects</h3>
-                    <p class="text-lg text-justify">A collection of graphics created for various social media marketing campaigns, including promotional banners, infographics, and social media posts. These designs aimed to boost user engagement and brand visibility.</p>
-                    <a href="graphics.html" target="_blank" class="text-yellow-600 hover:text-yellow-700">View Designs</a>
-                </div>
-            </div>
-        </div>
+    <!-- Education -->
+    <section id="education" class="section-container animate-fadeUp">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-graduation-cap text-yellow-400"></i> Education</h2>
+        <p><strong>Nile University of Nigeria</strong>, B.Sc. Software Engineering (2024) – First Class Honours</p>
+        <p class="text-gray-400 text-sm">Relevant Coursework: Web App Development, Database Management, System Analysis & Design</p>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container mx-auto px-6 py-16 ">
-        <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
-        <form action="https://formspree.io/f/meojarbz" method="post" class="bg-yellow-50 bg-opacity-70 text-yellow-900 shadow-md rounded-lg p-4 border border-yellow-300 transition duration-300 ease-in-out transform hover:shadow-2xl hover:ring-2 hover:ring-yellow-400 flex flex-col justify-between min-h-[400px] animate-slide-up hover-animate-up" style="animation-delay: 0.2s">
-            <div class="mb-4">
-                <label for="name" class="block text-lg font-medium mb-2">Name</label>
-                <input type="text" id="name" name="name" class="w-full p-2 border border-yellow-300 rounded" required>
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block text-lg font-medium mb-2">Email</label>
-                <input type="email" id="email" name="email" class="w-full p-2 border border-yellow-300 rounded" required>
-            </div>
-            <div class="mb-4">
-                <label for="message" class="block text-lg font-medium mb-2">Message</label>
-                <textarea id="message" name="message" rows="4" class="w-full p-2 border border-yellow-300 rounded" required></textarea>
-            </div>
-            <div class="flex justify-start">
-                <button type="submit" 
-                  class="bg-gradient-to-r from-yellow-600 to-yellow-400 text-white font-bold py-2 px-6 rounded-lg border-2 border-gray-300 transition hover:brightness-110 mt-4">
-                  Send
-                </button>
-              </div>
-              
-
-
-        </form>
+    <!-- Experience -->
+    <section id="experience" class="section-container animate-fadeUp">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-briefcase text-yellow-400"></i> Professional Experience</h2>
+        <ul class="space-y-4">
+          <li><strong>NIMASA</strong> – IT Support Specialist (2025–Present)<br><span class="text-gray-400 text-sm">Troubleshooting, user support, and network operations.</span></li>
+          <li><strong>Startup Campus</strong> – VP Portfolio Management (2025–Present)<br><span class="text-gray-400 text-sm">Guided startup projects, built mentor-investor partnerships, tracked milestones.</span></li>
+        </ul>
+      </div>
     </section>
-    
 
-    <!-- Footer Section -->
-    <footer class="relative z-10">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-          <div class="w-full h-full bg-cover bg-center" style="background-image: url('JPGS/gold-textured-background.jpg');"></div>
-          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-        </div>
+    <!-- Projects -->
+<section id="projects" class="section-container animate-fadeUp">
+  <div class="glass">
+    <h2 class="text-3xl font-bold mb-8"><i class="fa-solid fa-diagram-project text-yellow-400"></i> Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
-        <!-- Footer Content -->
-        <div class="relative z-10 py-4 text-yellow-50 text-center text-lg">
-          &copy; 2025 Bilal's Portfolio. All rights reserved.
-        </div>
-      </footer>
+      <!-- Project Card 1 -->
+      <div class="bg-gray-900 bg-opacity-70 border border-gray-700 rounded-xl p-5 hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-2"><i class="fa-solid fa-car-side"></i> SwiftRides</h3>
+        <p class="text-gray-300 mb-3 text-justify">
+          A Django-based car rental web app with user authentication, vehicle listings, booking system, and payment flow — built to simplify rentals for customers and companies.
+        </p>
+        <a href="https://github.com/bil049/SwiftRides" target="_blank" class="inline-block text-yellow-400 hover:text-yellow-300">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="bg-gray-900 bg-opacity-70 border border-gray-700 rounded-xl p-5 hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-2"><i class="fa-solid fa-hotel"></i> Hotel Management System</h3>
+        <p class="text-gray-300 mb-3 text-justify">
+          A hotel management system built with Django, HTML, CSS, and JavaScript. Includes booking, reservation management, extra services, and a chat box for customer-admin communication.
+        </p>
+        <a href="https://github.com/bil049/HMS" target="_blank" class="inline-block text-yellow-400 hover:text-yellow-300">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="bg-gray-900 bg-opacity-70 border border-gray-700 rounded-xl p-5 hover:shadow-xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-2xl font-bold text-yellow-400 mb-2"><i class="fa-solid fa-palette"></i> Graphic Design Projects</h3>
+        <p class="text-gray-300 mb-3 text-justify">
+          A curated collection of design work, including social media banners, infographics, and marketing campaigns — all aimed at boosting brand visibility and engagement.
+        </p>
+        <a href="graphics.html" target="_blank" class="inline-block text-yellow-400 hover:text-yellow-300">
+          <i class="fa-solid fa-image"></i> View Designs
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="section-container animate-fadeUp">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-laptop-code text-yellow-400"></i> Technical Skills</h2>
+        <p><strong>Programming:</strong> Python, Java, C, C++, JavaScript</p>
+        <p><strong>Frameworks:</strong> Django, Bootstrap, Tailwind, Figma</p>
+        <p><strong>Languages:</strong> English (Fluent), Hausa (Conversational), French (Basic)</p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section-container animate-fadeUp">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-certificate text-yellow-400"></i> Certifications</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Certificate in Graphic Design — Dialogue Institute of Technology & Management (Sep 2023)</li>
+          <li>Diploma in ICT Fundamentals — Dialogue Institute of Technology & Management (Oct 2022)</li>
+          <li>Junior Cybersecurity Analyst — Cisco (Apr 2024)</li>
+          <li>Software Developer Career Guide & Interview Prep — Coursera (Apr 2024)</li>
+          <li>J.P. Morgan – Software Engineering Simulation — Forage (Jan 2024)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section-container animate-fadeUp pb-20">
+      <div class="glass">
+        <h2 class="text-3xl font-bold mb-4"><i class="fa-solid fa-envelope text-yellow-400"></i> Contact</h2>
+        <form action="https://formspree.io/f/meojarbz" method="post" class="space-y-4">
+          <div>
+            <label for="name" class="block mb-1">Name</label>
+            <input type="text" id="name" name="name" class="w-full p-2 rounded bg-gray-900 border border-gray-600 text-gray-200" required>
+          </div>
+          <div>
+            <label for="email" class="block mb-1">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-900 border border-gray-600 text-gray-200" required>
+          </div>
+          <div>
+            <label for="message" class="block mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" class="w-full p-2 rounded bg-gray-900 border border-gray-600 text-gray-200" required></textarea>
+          </div>
+          <button type="submit" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded">Send</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-black bg-opacity-80 text-gray-500 text-sm">
+    © 2025 Bilal Attahiru – All rights reserved.
+  </footer>
 
 </body>
 </html>
